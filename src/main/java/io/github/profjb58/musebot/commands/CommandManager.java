@@ -1,8 +1,6 @@
 package io.github.profjb58.musebot.commands;
 
 import io.github.profjb58.musebot.MuseBot;
-import io.github.profjb58.musebot.commands.contest.ContestCommand;
-import io.github.profjb58.musebot.commands.contest.ShutdownCommand;
 import net.dv8tion.jda.api.events.guild.GenericGuildEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -17,7 +15,8 @@ public class CommandManager extends ListenerAdapter {
     public CommandManager(MuseBot instance) {
         var enabledCommands = List.of(
                 new ContestCommand(instance),
-                new ShutdownCommand()
+                new ShutdownCommand(),
+                new PurgeCommand()
         );
         for(var command : enabledCommands)
             activeCommands.put(command.getCommandData().getName(), command);

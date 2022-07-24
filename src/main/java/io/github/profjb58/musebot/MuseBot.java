@@ -34,7 +34,7 @@ public class MuseBot {
 
         JDA jda = JDABuilder.createDefault(envConfig.get("BOT_TOKEN"))
                 .setStatus(OnlineStatus.ONLINE)
-                .setMemberCachePolicy(MemberCachePolicy.ONLINE) // Save online members into the cache
+                .setMemberCachePolicy(MemberCachePolicy.ALL) // Save online members into the cache
                 .enableIntents(GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MEMBERS, GatewayIntent.DIRECT_MESSAGES)
                 .setChunkingFilter(ChunkingFilter.ALL)
                 .enableCache(CacheFlag.ONLINE_STATUS, CacheFlag.ROLE_TAGS, CacheFlag.GUILD_SCHEDULED_EVENTS) // Cache whenever the online status changes
