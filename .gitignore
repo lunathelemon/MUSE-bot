@@ -23,7 +23,7 @@
 hs_err_pid*
 
 # Env Files
-*.env
+.env
 
 # Gradle
 .gradle/
